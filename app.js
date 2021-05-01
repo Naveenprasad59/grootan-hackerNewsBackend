@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
 
 const userModel = mongoose.model("user",userSchema);
 
+app.get("/",function(req,res){
+  res.send("Hii");
+})
+
 app.post("/login",(req,res)=>{
   const username = req.body.username;
   const password = req.body.password;
