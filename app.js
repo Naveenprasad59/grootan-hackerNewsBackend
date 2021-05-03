@@ -22,7 +22,7 @@ app.get("/",function(req,res){
   res.send("Hii");
 })
 
-app.post("/login",(req,res)=>{
+app.post("/login",(req,res)=>{ 
   const username = req.body.username;
   const password = req.body.password;
   console.log(req.body);
@@ -33,7 +33,9 @@ app.post("/login",(req,res)=>{
     }else{
        console.log(user);
        if(user.password === password && user.username === username){
-         res.send({success: true})
+         res.send(
+           {success: true}
+          )
        }else{
          res.send({success: false})
        }
